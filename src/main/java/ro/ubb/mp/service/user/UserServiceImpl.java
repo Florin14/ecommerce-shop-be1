@@ -140,10 +140,6 @@ public class UserServiceImpl implements UserService {
                 .orElseThrow(() -> new UsernameNotFoundException("User Not Found with email: " + username));
     }
 
-    public List<User> getAllMentors() {
-        return userRepository.findAllByRole(Role.MENTOR);
-    }
-
     @Override
     public Optional<UserProfilePicture> findUserProfilePicture(Long userId) {
         return userProfilePictureRepository.findProfilePictureByUserId(userId);
