@@ -46,11 +46,6 @@ public class UserController {
         return ResponseEntity.ok().body(userService.getAll());
     }
 
-    @GetMapping("/mentors")
-    public ResponseEntity<List<User>> getMentors() {
-        return ResponseEntity.ok().body(userService.getAllMentors());
-    }
-
     @GetMapping("/users/profile")
     public ResponseEntity<ResponseWrapperDTO<UserProfileDTO>> getProfileInfo(final Authentication authentication) {
 

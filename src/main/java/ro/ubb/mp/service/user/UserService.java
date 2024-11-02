@@ -12,7 +12,6 @@ import java.util.Optional;
 public interface UserService extends UserDetailsService {
 
     List<User> getAll();
-    List<User> getAllMentors();
 
     Optional<User> getUserById(Long id);
 

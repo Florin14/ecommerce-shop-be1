@@ -45,7 +45,6 @@ public class ProductServiceImpl implements ProductService {
     @Override
     @Transactional
     public Product saveProduct(ProductRequestDTO productDTO, List<ProductSizeStockRequestDTO> productStock) {
-        System.out.println(productDTO);
 //        try {
         Brand brand = brandRepository.findById(productDTO.getBrand_id())
                 .orElseThrow(() -> new EntityNotFoundException("Brand not found with id: " + productDTO.getBrand_id()));
