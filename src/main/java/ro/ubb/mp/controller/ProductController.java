@@ -109,6 +109,13 @@ public class ProductController {
                 updateProduct(product, id))).build());
     }
 
+    @PutMapping("/{id}/add-to-favourite")
+    public ResponseEntity<ResponseWrapperDTO<ProductResponseDTO>> updateProductToFavourite(@RequestBody ProductRequestDTO product,
+                                                                                @PathVariable Long id) {
+        return ResponseEntity.ok().body(ResponseWrapperDTO.<ProductResponseDTO>builder().data(getProductMapper().toDTO(getProductService().
+                updateProduct(product, id))).build());
+    }
+
     @DeleteMapping("/{id}")
     public ResponseEntity<Long> deleteProduct(@PathVariable Long id) {
 
