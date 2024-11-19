@@ -109,7 +109,7 @@ public class ProductController {
                 updateProduct(product, id))).build());
     }
 
-    @PutMapping("/{id}/add-to-favourite")
+    @PutMapping("/{id}/add-to-favourites")
     public ResponseEntity<ResponseWrapperDTO<ProductResponseDTO>> updateProductToFavourite(@RequestBody ProductRequestDTO product,
                                                                                 @PathVariable Long id) {
         return ResponseEntity.ok().body(ResponseWrapperDTO.<ProductResponseDTO>builder().data(getProductMapper().toDTO(getProductService().
