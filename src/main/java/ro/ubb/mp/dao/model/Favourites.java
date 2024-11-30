@@ -22,4 +22,8 @@ public class Favourites {
     @OneToOne
     @JoinColumn(name = "product_size_id", referencedColumnName = "id", nullable = false)
     private ProductSize productSize;
+
+    @OneToOne
+    @JoinColumn(name = "user_id")
+    private User user;
 }
