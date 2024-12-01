@@ -2,10 +2,12 @@ package ro.ubb.mp.service.order;
 
 import ro.ubb.mp.controller.dto.request.OrderRequestDTO;
 import ro.ubb.mp.dao.model.Order;
+import ro.ubb.mp.dao.model.User;
 import ro.ubb.mp.dao.repository.OrderRepository;
 import lombok.Data;
 import lombok.Getter;
 import org.springframework.stereotype.Service;
+import ro.ubb.mp.dao.repository.UserRepository;
 
 import javax.persistence.EntityNotFoundException;
 import java.time.LocalDateTime;
@@ -17,7 +19,7 @@ import java.util.Optional;
 @Service
 public class OrderServiceImpl implements OrderService {
     private final OrderRepository orderRepository;
-//    private final UserRepository userRepository;
+    private final UserRepository userRepository;
 
     @Override
     public Optional<Order> findById(Long id) {
@@ -36,8 +38,8 @@ public class OrderServiceImpl implements OrderService {
                 .build();
 
         if(orderDTO.getUserId() != null) {
-//            final User user = getUserRepository().findById(orderDTO.getUserId()).orElseThrow(EntityNotFoundException::new);
-//            orderToBeSaved.setUser(user);
+            final User user = getUserRepository().findById(orderDTO.getUserId()).orElseThrow(EntityNotFoundException::new);
+            orderToBeSaved.setUser(user);
         }
         return orderRepository.save(orderToBeSaved);
 
