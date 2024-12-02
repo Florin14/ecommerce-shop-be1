@@ -1,9 +1,13 @@
 package ro.ubb.mp.controller;
 
 import ro.ubb.mp.controller.dto.mapper.BrandMapper;
+import ro.ubb.mp.controller.dto.mapper.OrderMapper;
 import ro.ubb.mp.controller.dto.request.BrandRequestDTO;
+import ro.ubb.mp.controller.dto.request.OrderRequestDTO;
 import ro.ubb.mp.controller.dto.response.brand.BrandResponseDTO;
+import ro.ubb.mp.controller.dto.response.order.OrderResponseDTO;
 import ro.ubb.mp.dao.model.Brand;
+import ro.ubb.mp.dao.model.Order;
 import ro.ubb.mp.service.brand.BrandService;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
@@ -11,6 +15,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
+import ro.ubb.mp.service.order.OrderService;
 
 import javax.persistence.EntityNotFoundException;
 import java.net.URI;
@@ -23,37 +28,36 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 public class OrderController {
 
-    private final BrandService brandService;
-    private final BrandMapper brandMapper;
+    private final OrderService orderService;
+    private final OrderMapper orderMapper;
 
     @GetMapping()
-    public ResponseEntity<List<BrandResponseDTO>> getBrands() {
-        List<Brand> brands = brandService.getAll();
-        List<BrandResponseDTO> brandResponseDTOS = brands.stream()
-                .map(brand -> getBrandMapper().toDTO(brand)).collect(Collectors.toList());
+    public ResponseEntity<List<OrderResponseDTO>> getOrders() {
+        List<Order> orders = orderService.getAll();
+        List<OrderResponseDTO> orderResponseDTOS = orders.stream().map(order -> getOrderMapper().toDTO(order)).collect(Collectors.toList());
 
-        return ResponseEntity.ok().body(brandResponseDTOS);
+        return ResponseEntity.ok().body(orderResponseDTOS);
     }
 
     @PostMapping()
-    public ResponseEntity<BrandResponseDTO> addBrand(@RequestBody BrandRequestDTO brand) {
-        URI uri = URI.create((ServletUriComponentsBuilder.fromCurrentContextPath().path("/addBrand").toUriString()));
-        return ResponseEntity.created(uri).body(getBrandMapper().toDTO(getBrandService().saveBrand(brand)));
+    public ResponseEntity<OrderResponseDTO> addBrand(@RequestBody OrderRequestDTO order) {
+        URI uri = URI.create((ServletUriComponentsBuilder.fromCurrentContextPath().path("/addOrder").toUriString()));
+        return ResponseEntity.created(uri).body(getOrderMapper().toDTO(getOrderService().saveOrder(order)));
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<BrandResponseDTO> updateBrand(@RequestBody BrandRequestDTO brand,
+    public ResponseEntity<OrderResponseDTO> updateBrand(@RequestBody OrderRequestDTO order,
                                                         @PathVariable Long id) {
-        return ResponseEntity.ok().body(getBrandMapper().toDTO(getBrandService().
-                updateBrand(brand, id)));
+        return ResponseEntity.ok().body(getOrderMapper().toDTO(getOrderService().
+                updateOrder(order, id)));
     }
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Long> deleteBrand(@PathVariable Long id) {
 
-        final Brand brand = getBrandService().findById(id).
+        final Order order = getOrderService().findById(id).
                 orElseThrow(EntityNotFoundException::new);
-        brandService.deleteBrandById(brand.getId());
+        orderService.deleteOrderById(order.getId());
         return new ResponseEntity<>(id, HttpStatus.OK);
 
     }
