@@ -40,7 +40,7 @@ public class OrderController {
     }
 
     @PostMapping()
-    public ResponseEntity<OrderResponseDTO> addBrand(@RequestBody OrderRequestDTO order) {
+    public ResponseEntity<OrderResponseDTO> addOrder(@RequestBody OrderRequestDTO order) {
         URI uri = URI.create((ServletUriComponentsBuilder.fromCurrentContextPath().path("/addOrder").toUriString()));
         return ResponseEntity.created(uri).body(getOrderMapper().toDTO(getOrderService().saveOrder(order)));
     }

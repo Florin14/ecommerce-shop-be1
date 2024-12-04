@@ -16,28 +16,18 @@ import java.util.List;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity(name = "orders")
-public class Order {
+@Entity(name = "order_event")
+public class OrderEvent {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
 
-    @OneToMany(mappedBy = "order")
-    private List<OrderItem> orderItems;
-
-    @OneToMany(mappedBy = "order")
-    private List<OrderEvent> events;
-
     @ManyToOne
-    @JoinColumn(name = "user_id", referencedColumnName = "id", nullable = false)
-    private User user;
-
-    @Enumerated(EnumType.STRING)
-    @Column(name = "order_state", nullable = false)
-    private OrderState orderState;
+    @JoinColumn(name = "order_id", referencedColumnName = "id", nullable = false)
+    private Order order;
 
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm")
-    private LocalDateTime orderDate;
+    private LocalDateTime timestamp;
 }
