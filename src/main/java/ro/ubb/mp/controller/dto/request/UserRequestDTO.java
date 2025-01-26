@@ -2,7 +2,7 @@ package ro.ubb.mp.controller.dto.request;
 
 import lombok.Builder;
 import lombok.Data;
-import ro.ubb.mp.dao.model.Role;
+import ro.ubb.mp.dao.model.postgres.Role;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;

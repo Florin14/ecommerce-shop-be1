@@ -12,9 +12,9 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import ro.ubb.mp.controller.dto.response.NotificationResponseDTO;
 import ro.ubb.mp.controller.dto.response.PageResponseWrapperDTO;
-import ro.ubb.mp.dao.model.Notification;
-import ro.ubb.mp.dao.model.User;
-import ro.ubb.mp.dao.repository.NotificationRepository;
+import ro.ubb.mp.dao.model.postgres.Notification;
+import ro.ubb.mp.dao.model.postgres.User;
+import ro.ubb.mp.dao.repository.postgres.NotificationRepository;
 
 import java.util.ArrayList;
 import java.util.List;

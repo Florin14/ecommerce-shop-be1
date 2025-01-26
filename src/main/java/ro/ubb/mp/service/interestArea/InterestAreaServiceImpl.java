@@ -4,9 +4,8 @@ import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import ro.ubb.mp.controller.dto.request.InterestAreaRequestDTO;
-import ro.ubb.mp.dao.model.Assignment;
-import ro.ubb.mp.dao.model.InterestArea;
-import ro.ubb.mp.dao.repository.InterestAreaRepository;
+import ro.ubb.mp.dao.model.postgres.InterestArea;
+import ro.ubb.mp.dao.repository.postgres.InterestAreaRepository;
 
 import javax.persistence.EntityNotFoundException;
 import java.util.List;

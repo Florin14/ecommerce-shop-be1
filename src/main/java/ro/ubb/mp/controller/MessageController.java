@@ -11,10 +11,9 @@ import ro.ubb.mp.controller.dto.mapper.MessageResponseMapper;
 import ro.ubb.mp.controller.dto.request.MessageRequestDTO;
 import ro.ubb.mp.controller.dto.response.MessageResponseDTO;
 import ro.ubb.mp.controller.dto.response.ResponseWrapperDTO;
-import ro.ubb.mp.dao.model.Message;
-import ro.ubb.mp.dao.model.User;
+import ro.ubb.mp.dao.model.mysql.Message;
+import ro.ubb.mp.dao.model.postgres.User;
 import ro.ubb.mp.service.message.MessageService;
-import ro.ubb.mp.service.message.MessageServiceImpl;
 
 import javax.persistence.EntityNotFoundException;
 import java.net.URI;
@@ -69,32 +68,32 @@ public class MessageController {
                 .body(ResponseWrapperDTO.<MessageResponseDTO>builder().error("Bad authentication type").build());
     }
 
-    @GetMapping("/users/{id}")
-    public ResponseEntity<ResponseWrapperDTO<List<MessageResponseDTO>>> getAllMessagesBetweenUsers(@PathVariable Long id){
-        if (SecurityContextHolder.getContext().getAuthentication().getPrincipal() instanceof User user){
-            List<MessageResponseDTO> messageResponseDTOS = getMessageService().getMessagesBetweenUsers(user.getId(), id)
-                    .stream().map(message -> getResponseMapper().toDTO(message)).collect(Collectors.toList());
+//    @GetMapping("/users/{id}")
+//    public ResponseEntity<ResponseWrapperDTO<List<MessageResponseDTO>>> getAllMessagesBetweenUsers(@PathVariable Long id){
+//        if (SecurityContextHolder.getContext().getAuthentication().getPrincipal() instanceof User user){
+//            List<MessageResponseDTO> messageResponseDTOS = getMessageService().getMessagesBetweenUsers(user.getId(), id)
+//                    .stream().map(message -> getResponseMapper().toDTO(message)).collect(Collectors.toList());
+//
+//            return ResponseEntity.ok()
+//                    .body(ResponseWrapperDTO.<List<MessageResponseDTO>>builder().data(messageResponseDTOS).build());
+//        }
 
-            return ResponseEntity.ok()
-                    .body(ResponseWrapperDTO.<List<MessageResponseDTO>>builder().data(messageResponseDTOS).build());
-        }
+//        return ResponseEntity.badRequest()
+//                .body(ResponseWrapperDTO.<List<MessageResponseDTO>>builder().error("Bad authentication type").build());
+//    }
 
-        return ResponseEntity.badRequest()
-                .body(ResponseWrapperDTO.<List<MessageResponseDTO>>builder().error("Bad authentication type").build());
-    }
-
-    @GetMapping("/user/{id}")
-    public ResponseEntity<ResponseWrapperDTO<List<MessageResponseDTO>>> getAllUserMessages(@PathVariable Long id){
-        if (SecurityContextHolder.getContext().getAuthentication().getPrincipal() instanceof User user){
-            List<MessageResponseDTO> messageResponseDTOS = getMessageService().getAllUserMessages(id)
-                    .stream().map(message -> getResponseMapper().toDTO(message)).collect(Collectors.toList());
-
-            return ResponseEntity.ok()
-                    .body(ResponseWrapperDTO.<List<MessageResponseDTO>>builder().data(messageResponseDTOS).build());
-        }
-
-        return ResponseEntity.badRequest()
-                .body(ResponseWrapperDTO.<List<MessageResponseDTO>>builder().error("Bad authentication type").build());
-    }
+//    @GetMapping("/user/{id}")
+//    public ResponseEntity<ResponseWrapperDTO<List<MessageResponseDTO>>> getAllUserMessages(@PathVariable Long id){
+//        if (SecurityContextHolder.getContext().getAuthentication().getPrincipal() instanceof User user){
+//            List<MessageResponseDTO> messageResponseDTOS = getMessageService().getAllUserMessages(id)
+//                    .stream().map(message -> getResponseMapper().toDTO(message)).collect(Collectors.toList());
+//
+//            return ResponseEntity.ok()
+//                    .body(ResponseWrapperDTO.<List<MessageResponseDTO>>builder().data(messageResponseDTOS).build());
+//        }
+//
+//        return ResponseEntity.badRequest()
+//                .body(ResponseWrapperDTO.<List<MessageResponseDTO>>builder().error("Bad authentication type").build());
+//    }
 
 }

@@ -10,11 +10,10 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 import ro.ubb.mp.controller.dto.mapper.NotificationResponseMapper;
-import ro.ubb.mp.controller.dto.response.MessageResponseDTO;
 import ro.ubb.mp.controller.dto.response.NotificationResponseDTO;
 import ro.ubb.mp.controller.dto.response.PageResponseWrapperDTO;
 import ro.ubb.mp.controller.dto.response.ResponseWrapperDTO;
-import ro.ubb.mp.dao.model.User;
+import ro.ubb.mp.dao.model.postgres.User;
 import ro.ubb.mp.service.notification.NotificationService;
 
 import java.nio.file.attribute.UserPrincipalNotFoundException;

@@ -1,7 +1,7 @@
 package ro.ubb.mp.controller.dto.mapper;
         import org.mapstruct.Mapper;
         import ro.ubb.mp.controller.dto.response.NotificationResponseDTO;
-        import ro.ubb.mp.dao.model.Notification;
+        import ro.ubb.mp.dao.model.postgres.Notification;
 
 @Mapper(componentModel = "spring")
 

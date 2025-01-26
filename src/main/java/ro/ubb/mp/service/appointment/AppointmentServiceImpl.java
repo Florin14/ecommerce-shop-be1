@@ -2,20 +2,14 @@ package ro.ubb.mp.service.appointment;
 
 import lombok.Data;
 import lombok.Getter;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import ro.ubb.mp.controller.dto.request.AppointmentRequestDTO;
-import ro.ubb.mp.controller.dto.response.AppointmentResponseDTO;
-import ro.ubb.mp.controller.dto.response.PageResponseWrapperDTO;
 
-import ro.ubb.mp.dao.model.Appointment;
-import ro.ubb.mp.dao.model.Role;
-import ro.ubb.mp.dao.model.User;
-import ro.ubb.mp.dao.repository.AppointmentRepository;
+import ro.ubb.mp.dao.model.postgres.Appointment;
+import ro.ubb.mp.dao.model.postgres.Role;
+import ro.ubb.mp.dao.model.postgres.User;
+import ro.ubb.mp.dao.repository.postgres.AppointmentRepository;
 import ro.ubb.mp.service.user.UserService;
 
 import javax.persistence.EntityNotFoundException;
@@ -23,7 +17,6 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
 
 @Service("appointmentService")
 @Data

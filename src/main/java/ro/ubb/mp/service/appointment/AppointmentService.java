@@ -1,10 +1,8 @@
 package ro.ubb.mp.service.appointment;
 
 import ro.ubb.mp.controller.dto.request.AppointmentRequestDTO;
-import ro.ubb.mp.controller.dto.response.AppointmentResponseDTO;
-import ro.ubb.mp.controller.dto.response.PageResponseWrapperDTO;
-import ro.ubb.mp.dao.model.Appointment;
-import ro.ubb.mp.dao.model.User;
+import ro.ubb.mp.dao.model.postgres.Appointment;
+import ro.ubb.mp.dao.model.postgres.User;
 
 import java.util.List;
 import java.util.Optional;

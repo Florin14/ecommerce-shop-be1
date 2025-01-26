@@ -2,7 +2,7 @@ package ro.ubb.mp.controller.dto.mapper;
 
 import org.mapstruct.Mapper;
 import ro.ubb.mp.controller.dto.response.UserProfilePictureResponseDTO;
-import ro.ubb.mp.dao.model.UserProfilePicture;
+import ro.ubb.mp.dao.model.postgres.UserProfilePicture;
 
 import java.util.Base64;
 import java.util.Optional;

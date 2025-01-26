@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 import ro.ubb.mp.controller.dto.mapper.StudyMapper;
 import ro.ubb.mp.controller.dto.response.ResponseWrapperDTO;
 import ro.ubb.mp.controller.dto.response.user.StudyResponseDTO;
-import ro.ubb.mp.dao.model.Study;
+import ro.ubb.mp.dao.model.postgres.Study;
 import ro.ubb.mp.service.user.StudyService;
 
 import java.util.ArrayList;

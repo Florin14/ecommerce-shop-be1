@@ -1,9 +1,9 @@
-package ro.ubb.mp.dao.repository;
+package ro.ubb.mp.dao.repository.postgres;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
-import ro.ubb.mp.dao.model.UserProfilePicture;
+import ro.ubb.mp.dao.model.postgres.UserProfilePicture;
 
 import javax.transaction.Transactional;
 import java.util.Optional;

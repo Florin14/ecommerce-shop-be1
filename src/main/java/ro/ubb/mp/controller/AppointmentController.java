@@ -10,14 +10,11 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import ro.ubb.mp.controller.dto.mapper.AppointmentResponseMapper;
-import ro.ubb.mp.controller.dto.mapper.UserFullNameMapper;
 import ro.ubb.mp.controller.dto.request.AppointmentRequestDTO;
 import ro.ubb.mp.controller.dto.response.AppointmentResponseDTO;
-import ro.ubb.mp.controller.dto.response.PageResponseWrapperDTO;
 import ro.ubb.mp.controller.dto.response.ResponseWrapperDTO;
-import ro.ubb.mp.dao.model.Appointment;
-import ro.ubb.mp.dao.model.Role;
-import ro.ubb.mp.dao.model.User;
+import ro.ubb.mp.dao.model.postgres.Appointment;
+import ro.ubb.mp.dao.model.postgres.User;
 import ro.ubb.mp.service.appointment.AppointmentServiceImpl;
 
 import javax.persistence.EntityNotFoundException;

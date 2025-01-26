@@ -2,7 +2,7 @@ package ro.ubb.mp.controller.dto.mapper;
 
 import org.mapstruct.Mapper;
 import ro.ubb.mp.controller.dto.response.announcement.AnnouncementResponseDTO;
-import ro.ubb.mp.dao.model.Announcement;
+import ro.ubb.mp.dao.model.postgres.Announcement;
 
 @Mapper(componentModel = "spring")
 public interface AnnouncementMapper {

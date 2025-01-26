@@ -2,7 +2,7 @@ package ro.ubb.mp.service.announcement;
 
 import ro.ubb.mp.controller.dto.request.AnnouncementRequestDTO;
 import ro.ubb.mp.controller.dto.response.announcement.AnnouncementResponseDTO;
-import ro.ubb.mp.dao.model.Announcement;
+import ro.ubb.mp.dao.model.postgres.Announcement;
 
 import java.util.List;
 import java.util.Optional;

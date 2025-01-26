@@ -14,8 +14,8 @@ import java.util.Date;
 @Builder
 public class MessageResponseDTO {
     private Long id;
-    private UserFullNameDTO sender;
-    private UserFullNameDTO receiver;
+    private Long senderId;
+    private Long receiverId;
     private String content;
     @NotNull
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss[.SSS][.SS][.S]")

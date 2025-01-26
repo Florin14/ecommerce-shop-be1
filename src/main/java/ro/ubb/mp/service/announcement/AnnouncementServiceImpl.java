@@ -9,12 +9,12 @@ import ro.ubb.mp.controller.dto.request.AnnouncementRequestDTO;
 import ro.ubb.mp.controller.dto.response.InterestAreaResponseDTO;
 import ro.ubb.mp.controller.dto.response.announcement.AnnouncementResponseDTO;
 import ro.ubb.mp.controller.dto.response.announcement.AnnouncementUserResponseDTO;
-import ro.ubb.mp.dao.model.Announcement;
-import ro.ubb.mp.dao.model.InterestArea;
-import ro.ubb.mp.dao.model.User;
-import ro.ubb.mp.dao.model.UserProfilePicture;
-import ro.ubb.mp.dao.repository.AnnouncementRepository;
-import ro.ubb.mp.dao.repository.UserProfilePictureRepository;
+import ro.ubb.mp.dao.model.postgres.Announcement;
+import ro.ubb.mp.dao.model.postgres.InterestArea;
+import ro.ubb.mp.dao.model.postgres.User;
+import ro.ubb.mp.dao.model.postgres.UserProfilePicture;
+import ro.ubb.mp.dao.repository.postgres.AnnouncementRepository;
+import ro.ubb.mp.dao.repository.postgres.UserProfilePictureRepository;
 import ro.ubb.mp.service.interestArea.InterestAreaService;
 import ro.ubb.mp.service.user.UserService;
 

@@ -4,10 +4,9 @@ import lombok.Data;
 import lombok.Getter;
 import org.springframework.stereotype.Service;
 import ro.ubb.mp.controller.dto.request.MessageRequestDTO;
-import ro.ubb.mp.dao.model.Message;
-import ro.ubb.mp.dao.model.User;
-import ro.ubb.mp.dao.repository.MessageRepository;
-import ro.ubb.mp.dao.repository.UserRepository;
+import ro.ubb.mp.dao.model.mysql.Message;
+import ro.ubb.mp.dao.model.postgres.User;
+import ro.ubb.mp.dao.repository.mysql.MessageRepository;
 import ro.ubb.mp.service.user.UserService;
 
 import javax.persistence.EntityNotFoundException;
@@ -34,14 +33,14 @@ public class MessageServiceImpl implements MessageService {
 
     @Override
     public Message saveMessage(MessageRequestDTO messageDTO) {
-        final User sender = getUserService().getUserById(messageDTO.getSenderId()).orElseThrow(EntityNotFoundException::new);
-        final User receiver = getUserService().getUserById(messageDTO.getReceiverId()).orElseThrow(EntityNotFoundException::new);
+//        final User sender = getUserService().getUserById(messageDTO.getSenderId()).orElseThrow(EntityNotFoundException::new);
+//        final User receiver = getUserService().getUserById(messageDTO.getReceiverId()).orElseThrow(EntityNotFoundException::new);
 
         final Message messageToBeSaved = Message.builder()
                 .content(messageDTO.getContent())
-                .receiver(receiver)
+                .receiverId(messageDTO.getReceiverId())
                 .timestamp(Timestamp.from(Instant.now()).toLocalDateTime())
-                .sender(sender)
+                .senderId(messageDTO.getSenderId())
                 .build();
 
         return messageRepository.save(messageToBeSaved);
@@ -52,24 +51,24 @@ public class MessageServiceImpl implements MessageService {
         messageRepository.deleteById(id);
     }
 
-    @Override
-    public List<Message> getMessagesBetweenUsers(Long id1, Long id2) {
-        User user1 = userService.getUserById(id1).orElseThrow(EntityNotFoundException::new);
-        User user2 = userService.getUserById(id2).orElseThrow(EntityNotFoundException::new);
+//    @Override
+//    public List<Message> getMessagesBetweenUsers(Long id1, Long id2) {
+//        User user1 = userService.getUserById(id1).orElseThrow(EntityNotFoundException::new);
+//        User user2 = userService.getUserById(id2).orElseThrow(EntityNotFoundException::new);
+//
+//        return Stream.concat(messageRepository.findBySenderAndReceiver(user1, user2).stream(),
+//                        messageRepository.findBySenderAndReceiver(user2, user1).stream())
+//                .sorted(Comparator.comparing(Message::getTimestamp)).collect(Collectors.toList());
+//    }
 
-        return Stream.concat(messageRepository.findBySenderAndReceiver(user1, user2).stream(),
-                        messageRepository.findBySenderAndReceiver(user2, user1).stream())
-                .sorted(Comparator.comparing(Message::getTimestamp)).collect(Collectors.toList());
-    }
-
-    @Override
-    public List<Message> getAllUserMessages(Long id) {
-        User user = userService.getUserById(id).orElseThrow(EntityNotFoundException::new);
-
-        return Stream.concat(messageRepository.findBySender(user).stream(),
-                        messageRepository.findByReceiver(user).stream())
-                .sorted(Comparator.comparing(Message::getTimestamp)).collect(Collectors.toList());
-    }
+//    @Override
+//    public List<Message> getAllUserMessages(Long id) {
+//        User user = userService.getUserById(id).orElseThrow(EntityNotFoundException::new);
+//
+//        return Stream.concat(messageRepository.findBySender(user).stream(),
+//                        messageRepository.findByReceiver(user).stream())
+//                .sorted(Comparator.comparing(Message::getTimestamp)).collect(Collectors.toList());
+//    }
 
     @Override
     public User findUserById(Long id) {

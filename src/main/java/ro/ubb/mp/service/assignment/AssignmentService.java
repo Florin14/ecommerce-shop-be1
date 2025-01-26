@@ -1,8 +1,8 @@
 package ro.ubb.mp.service.assignment;
 
 import ro.ubb.mp.controller.dto.request.AssignmentRequestDTO;
-import ro.ubb.mp.dao.model.Assignment;
-import ro.ubb.mp.dao.model.Submission;
+import ro.ubb.mp.dao.model.postgres.Assignment;
+import ro.ubb.mp.dao.model.postgres.Submission;
 
 import java.util.List;
 import java.util.Optional;

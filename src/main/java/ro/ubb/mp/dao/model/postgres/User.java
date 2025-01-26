@@ -1,4 +1,4 @@
-package ro.ubb.mp.dao.model;
+package ro.ubb.mp.dao.model.postgres;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;

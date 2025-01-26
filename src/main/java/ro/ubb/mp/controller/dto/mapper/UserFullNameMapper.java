@@ -2,7 +2,7 @@ package ro.ubb.mp.controller.dto.mapper;
 
 import org.mapstruct.Mapper;
 import ro.ubb.mp.controller.dto.response.user.UserFullNameDTO;
-import ro.ubb.mp.dao.model.User;
+import ro.ubb.mp.dao.model.postgres.User;
 
 @Mapper(componentModel = "spring")
 public interface UserFullNameMapper {

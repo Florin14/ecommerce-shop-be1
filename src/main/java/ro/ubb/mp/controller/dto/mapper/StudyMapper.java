@@ -2,7 +2,7 @@ package ro.ubb.mp.controller.dto.mapper;
 
 import org.mapstruct.Mapper;
 import ro.ubb.mp.controller.dto.response.user.StudyResponseDTO;
-import ro.ubb.mp.dao.model.Study;
+import ro.ubb.mp.dao.model.postgres.Study;
 
 @Mapper(componentModel = "spring")
 public interface StudyMapper {

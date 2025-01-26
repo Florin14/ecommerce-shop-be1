@@ -6,11 +6,9 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import ro.ubb.mp.controller.dto.response.InterestAreaResponseDTO;
-import ro.ubb.mp.dao.model.UserProfilePicture;
 
 import java.time.LocalDate;
 import java.util.List;
-import java.util.Optional;
 
 @Builder
 @Data

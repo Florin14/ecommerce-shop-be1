@@ -6,9 +6,8 @@ import org.springframework.messaging.simp.SimpMessagingTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import ro.ubb.mp.controller.dto.request.MessageRequestDTO;
-import ro.ubb.mp.dao.model.Message;
-import ro.ubb.mp.dao.model.Submission;
-import ro.ubb.mp.dao.model.User;
+import ro.ubb.mp.dao.model.mysql.Message;
+import ro.ubb.mp.dao.model.postgres.User;
 import ro.ubb.mp.service.message.MessageService;
 
 import java.time.LocalDateTime;

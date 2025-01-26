@@ -3,8 +3,8 @@ package ro.ubb.mp.service.user;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import ro.ubb.mp.controller.dto.request.ProfileRequestDTO;
 import ro.ubb.mp.controller.dto.request.UserRequestDTO;
-import ro.ubb.mp.dao.model.User;
-import ro.ubb.mp.dao.model.UserProfilePicture;
+import ro.ubb.mp.dao.model.postgres.User;
+import ro.ubb.mp.dao.model.postgres.UserProfilePicture;
 
 import java.util.List;
 import java.util.Optional;

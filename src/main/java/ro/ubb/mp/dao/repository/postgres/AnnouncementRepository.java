@@ -1,7 +1,7 @@
-package ro.ubb.mp.dao.repository;
+package ro.ubb.mp.dao.repository.postgres;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import ro.ubb.mp.dao.model.Announcement;
+import ro.ubb.mp.dao.model.postgres.Announcement;
 
 import java.util.List;
 

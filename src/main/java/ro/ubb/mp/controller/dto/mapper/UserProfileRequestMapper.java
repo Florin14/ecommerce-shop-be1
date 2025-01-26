@@ -4,7 +4,7 @@ import org.mapstruct.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import ro.ubb.mp.controller.dto.request.ProfileRequestDTO;
-import ro.ubb.mp.dao.model.User;
+import ro.ubb.mp.dao.model.postgres.User;
 
 @Mapper(componentModel = "spring",
         nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE

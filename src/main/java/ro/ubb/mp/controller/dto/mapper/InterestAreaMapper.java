@@ -2,7 +2,7 @@ package ro.ubb.mp.controller.dto.mapper;
 
 import org.mapstruct.Mapper;
 import ro.ubb.mp.controller.dto.response.InterestAreaResponseDTO;
-import ro.ubb.mp.dao.model.InterestArea;
+import ro.ubb.mp.dao.model.postgres.InterestArea;
 
 @Mapper(componentModel = "spring")
 public interface InterestAreaMapper {

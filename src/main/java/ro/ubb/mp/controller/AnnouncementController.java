@@ -9,7 +9,7 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import ro.ubb.mp.controller.dto.mapper.AnnouncementMapper;
 import ro.ubb.mp.controller.dto.request.AnnouncementRequestDTO;
 import ro.ubb.mp.controller.dto.response.announcement.AnnouncementResponseDTO;
-import ro.ubb.mp.dao.model.Announcement;
+import ro.ubb.mp.dao.model.postgres.Announcement;
 import ro.ubb.mp.service.announcement.AnnouncementService;
 import ro.ubb.mp.service.interestArea.InterestAreaService;
 import ro.ubb.mp.service.user.UserService;
@@ -17,7 +17,6 @@ import ro.ubb.mp.service.user.UserService;
 import javax.persistence.EntityNotFoundException;
 import java.net.URI;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/announcements")

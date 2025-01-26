@@ -11,8 +11,8 @@ import org.springframework.transaction.annotation.Transactional;
 import ro.ubb.mp.controller.dto.mapper.UserProfileRequestMapper;
 import ro.ubb.mp.controller.dto.request.ProfileRequestDTO;
 import ro.ubb.mp.controller.dto.request.UserRequestDTO;
-import ro.ubb.mp.dao.model.*;
-import ro.ubb.mp.dao.repository.*;
+import ro.ubb.mp.dao.model.postgres.*;
+import ro.ubb.mp.dao.repository.postgres.*;
 
 import javax.persistence.EntityNotFoundException;
 import java.util.List;

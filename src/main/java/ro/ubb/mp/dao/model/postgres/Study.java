@@ -1,4 +1,4 @@
-package ro.ubb.mp.dao.model;
+package ro.ubb.mp.dao.model.postgres;
 
 import lombok.Data;
 

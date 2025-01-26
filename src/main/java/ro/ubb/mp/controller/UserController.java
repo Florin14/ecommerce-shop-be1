@@ -16,13 +16,12 @@ import ro.ubb.mp.controller.dto.request.ProfileRequestDTO;
 import ro.ubb.mp.controller.dto.response.ResponseWrapperDTO;
 import ro.ubb.mp.controller.dto.response.UserProfilePictureResponseDTO;
 import ro.ubb.mp.controller.dto.response.user.UserProfileDTO;
-import ro.ubb.mp.dao.model.User;
-import ro.ubb.mp.dao.model.UserProfilePicture;
+import ro.ubb.mp.dao.model.postgres.User;
+import ro.ubb.mp.dao.model.postgres.UserProfilePicture;
 import ro.ubb.mp.service.user.UserService;
 
 import javax.persistence.EntityNotFoundException;
 import java.io.IOException;
-import java.util.Base64;
 import java.util.List;
 import java.util.Optional;
 

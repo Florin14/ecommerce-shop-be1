@@ -10,7 +10,7 @@ import ro.ubb.mp.controller.dto.mapper.InterestAreaMapper;
 import ro.ubb.mp.controller.dto.request.InterestAreaRequestDTO;
 import ro.ubb.mp.controller.dto.response.InterestAreaResponseDTO;
 import ro.ubb.mp.controller.dto.response.ResponseWrapperDTO;
-import ro.ubb.mp.dao.model.InterestArea;
+import ro.ubb.mp.dao.model.postgres.InterestArea;
 import ro.ubb.mp.service.interestArea.InterestAreaService;
 
 import javax.persistence.EntityNotFoundException;

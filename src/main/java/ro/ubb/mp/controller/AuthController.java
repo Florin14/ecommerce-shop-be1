@@ -16,7 +16,7 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import ro.ubb.mp.controller.dto.response.JWTResponseDTO;
 import ro.ubb.mp.controller.dto.request.UserLoginDTO;
 import ro.ubb.mp.controller.dto.request.UserRequestDTO;
-import ro.ubb.mp.dao.model.User;
+import ro.ubb.mp.dao.model.postgres.User;
 import ro.ubb.mp.security.jwt.JwtUtils;
 import ro.ubb.mp.service.user.UserService;
 

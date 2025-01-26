@@ -5,7 +5,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
-import ro.ubb.mp.dao.model.User;
+import ro.ubb.mp.dao.model.postgres.User;
 
 import java.util.Date;
 

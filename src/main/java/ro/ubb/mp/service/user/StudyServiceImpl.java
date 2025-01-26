@@ -3,8 +3,8 @@ package ro.ubb.mp.service.user;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import ro.ubb.mp.dao.model.Study;
-import ro.ubb.mp.dao.repository.StudyRepository;
+import ro.ubb.mp.dao.model.postgres.Study;
+import ro.ubb.mp.dao.repository.postgres.StudyRepository;
 
 import java.util.List;
 

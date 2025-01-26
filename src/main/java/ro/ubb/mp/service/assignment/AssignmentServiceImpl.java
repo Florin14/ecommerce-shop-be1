@@ -5,11 +5,11 @@ import lombok.Getter;
 import org.springframework.stereotype.Service;
 import ro.ubb.mp.controller.dto.request.AssignmentRequestDTO;
 import ro.ubb.mp.controller.dto.request.SubmissionRequestDTO;
-import ro.ubb.mp.dao.model.Assignment;
-import ro.ubb.mp.dao.model.Submission;
-import ro.ubb.mp.dao.model.User;
-import ro.ubb.mp.dao.repository.AssignmentRepository;
-import ro.ubb.mp.dao.repository.SubmissionRepository;
+import ro.ubb.mp.dao.model.postgres.Assignment;
+import ro.ubb.mp.dao.model.postgres.Submission;
+import ro.ubb.mp.dao.model.postgres.User;
+import ro.ubb.mp.dao.repository.postgres.AssignmentRepository;
+import ro.ubb.mp.dao.repository.postgres.SubmissionRepository;
 import ro.ubb.mp.service.user.UserService;
 
 import javax.persistence.EntityNotFoundException;

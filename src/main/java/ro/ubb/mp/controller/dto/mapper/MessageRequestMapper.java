@@ -1,7 +1,6 @@
 package ro.ubb.mp.controller.dto.mapper;
-import org.mapstruct.Mapper;
 import ro.ubb.mp.controller.dto.request.MessageRequestDTO;
-import ro.ubb.mp.dao.model.Message;
+import ro.ubb.mp.dao.model.mysql.Message;
 
 
 public interface MessageRequestMapper {
