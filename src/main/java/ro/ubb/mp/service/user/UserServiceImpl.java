@@ -95,22 +95,22 @@ public class UserServiceImpl implements UserService {
         final User user = getUserById(profileRequestDTO.getId()).orElseThrow(EntityNotFoundException::new);
         getUserProfileUpdateMapper().update(user, profileRequestDTO);
 
-        if (profileRequestDTO.getCompletedStudyIds() != null) {
-            final List<Study> completedStudies = getStudyRepository().findAllById(profileRequestDTO.getCompletedStudyIds());
-            user.getCompletedStudies().clear();
-            user.getCompletedStudies().addAll(completedStudies);
-        }
-
-        if (profileRequestDTO.getInterestAreaIds() != null) {
-            final List<InterestArea> interestAreas = getInterestAreaRepository().findAllById(profileRequestDTO.getInterestAreaIds());
-            user.getInterestAreas().clear();
-            user.getInterestAreas().addAll(interestAreas);
-        }
-
-        if (profileRequestDTO.getOngoingStudyId() != null) {
-            final Study ongoingStudy = getStudyRepository().findById(profileRequestDTO.getOngoingStudyId()).orElseThrow(EntityNotFoundException::new);
-            user.setOngoingStudy(ongoingStudy);
-        }
+//        if (profileRequestDTO.getCompletedStudyIds() != null) {
+//            final List<Study> completedStudies = getStudyRepository().findAllById(profileRequestDTO.getCompletedStudyIds());
+//            user.getCompletedStudies().clear();
+//            user.getCompletedStudies().addAll(completedStudies);
+//        }
+//
+//        if (profileRequestDTO.getInterestAreaIds() != null) {
+//            final List<InterestArea> interestAreas = getInterestAreaRepository().findAllById(profileRequestDTO.getInterestAreaIds());
+//            user.getInterestAreas().clear();
+//            user.getInterestAreas().addAll(interestAreas);
+//        }
+//
+//        if (profileRequestDTO.getOngoingStudyId() != null) {
+//            final Study ongoingStudy = getStudyRepository().findById(profileRequestDTO.getOngoingStudyId()).orElseThrow(EntityNotFoundException::new);
+//            user.setOngoingStudy(ongoingStudy);
+//        }
 
         userRepository.save(user);
 
@@ -145,10 +145,10 @@ public class UserServiceImpl implements UserService {
         return userProfilePictureRepository.findProfilePictureByUserId(userId);
     }
 
-    @Override
-    public UserProfilePicture saveUserProfilePicture(UserProfilePicture userDTO) {
-        return userProfilePictureRepository.save(userDTO);
-    }
+//    @Override
+//    public UserProfilePicture saveUserProfilePicture(UserProfilePicture userDTO) {
+//        return userProfilePictureRepository.save(userDTO);
+//    }
 
     @Override
     public void updateUserProfilePicture(Long userId, byte[] imageData) {

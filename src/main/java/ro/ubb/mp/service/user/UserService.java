@@ -28,7 +28,7 @@ public interface UserService extends UserDetailsService {
 
     Optional<UserProfilePicture> findUserProfilePicture(Long userId);
 
-    UserProfilePicture saveUserProfilePicture(UserProfilePicture userProfilePicture);
+//    UserProfilePicture saveUserProfilePicture(UserProfilePicture userProfilePicture);
 
     void updateUserProfilePicture(Long userId, byte[] imageData);
 }

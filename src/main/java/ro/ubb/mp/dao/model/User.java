@@ -66,38 +66,38 @@ public class User implements UserDetails {
     )
     private String username;
 
-    @ManyToMany(cascade = {
-            CascadeType.PERSIST,
-            CascadeType.MERGE
-    })
-    @JoinTable(name = "user_completed_study_xref",
-            joinColumns = @JoinColumn(name = "user_id"),
-            inverseJoinColumns = @JoinColumn(name = "study_id")
-    )
-    private List<Study> completedStudies;
-
-    @ManyToOne(fetch = FetchType.LAZY)
-    private Study ongoingStudy;
-
-    private Date birthdate;
-
-    @ManyToMany(cascade = {
-            CascadeType.PERSIST,
-            CascadeType.MERGE
-    })
-    @JoinTable(name = "user_interest_area_xref",
-            joinColumns = @JoinColumn(name = "user_id"),
-            inverseJoinColumns = @JoinColumn(name = "interest_area_id")
-    )
-    private Set<InterestArea> interestAreas = new HashSet<>();
-
-    private String description;
+//    @ManyToMany(cascade = {
+//            CascadeType.PERSIST,
+//            CascadeType.MERGE
+//    })
+//    @JoinTable(name = "user_completed_study_xref",
+//            joinColumns = @JoinColumn(name = "user_id"),
+//            inverseJoinColumns = @JoinColumn(name = "study_id")
+//    )
+//    private List<Study> completedStudies;
+//
+//    @ManyToOne(fetch = FetchType.LAZY)
+//    private Study ongoingStudy;
+//
+//    private Date birthdate;
+//
+//    @ManyToMany(cascade = {
+//            CascadeType.PERSIST,
+//            CascadeType.MERGE
+//    })
+//    @JoinTable(name = "user_interest_area_xref",
+//            joinColumns = @JoinColumn(name = "user_id"),
+//            inverseJoinColumns = @JoinColumn(name = "interest_area_id")
+//    )
+//    private Set<InterestArea> interestAreas = new HashSet<>();
+//
+//    private String description;
 
     @Enumerated(EnumType.STRING)
     private Role role;
 
-    @OneToOne(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private UserProfilePicture profilePicture;
+//    @OneToOne(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+//    private UserProfilePicture profilePicture;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {

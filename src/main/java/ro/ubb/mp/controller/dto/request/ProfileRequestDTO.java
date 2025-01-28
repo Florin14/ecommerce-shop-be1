@@ -14,10 +14,10 @@ public class ProfileRequestDTO {
     private String fullName;
     private String password;
     private MultipartFile profilePicture;
-    private List<Long> completedStudyIds;
-    private Long ongoingStudyId;
-    private List<Long> interestAreaIds;
-    private String description;
-    @DateTimeFormat(pattern = "dd-MM-yyyy")
-    private LocalDate birthdate;
+//    private List<Long> completedStudyIds;
+//    private Long ongoingStudyId;
+//    private List<Long> interestAreaIds;
+//    private String description;
+//    @DateTimeFormat(pattern = "dd-MM-yyyy")
+//    private LocalDate birthdate;
 }

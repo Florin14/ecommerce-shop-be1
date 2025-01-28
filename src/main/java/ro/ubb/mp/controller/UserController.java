@@ -51,20 +51,20 @@ public class UserController {
 
         if (authentication.getPrincipal() instanceof User user) {
 
-            User fetchedUser = (User) userService.loadUserByUsername(user.getUsername());
+//            User fetchedUser = (User) userService.loadUserByUsername(user.getUsername());
 
-            UserProfileDTO userProfileDTO = getUserMapper().toProfileDTO(fetchedUser);
+//            UserProfileDTO userProfileDTO = getUserMapper().toProfileDTO(fetchedUser);
 
 //            Optional<UserProfilePicture> imageEntity = userService.findUserProfilePicture(user.getId());
 //
 //            imageEntity.ifPresent(avatar -> userProfileDTO.setAvatar(Base64.getEncoder().encodeToString(profilePicture.getImageData())));
 
-            return ResponseEntity
-                    .ok(ResponseWrapperDTO
-                            .<UserProfileDTO>builder()
-                            .data(userProfileDTO)
-                            .build()
-                    );
+//            return ResponseEntity
+//                    .ok(ResponseWrapperDTO
+//                            .<UserProfileDTO>builder()
+//                            .data(userProfileDTO)
+//                            .build()
+//                    );
         }
 
         return ResponseEntity
@@ -106,7 +106,7 @@ public class UserController {
                                 .imageName(fileName)
                                 .user(user)
                                 .build();
-                        userService.saveUserProfilePicture(newImageEntity);
+//                        userService.saveUserProfilePicture(newImageEntity);
                     }
 
 //                    userProfileDTO.setAvatar(Base64.getEncoder().encodeToString(imageData));

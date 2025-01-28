@@ -71,9 +71,7 @@ public class SecurityConfiguration {
                 .exceptionHandling().authenticationEntryPoint(getUnauthorizedHandler())
                 .and()
                 .authorizeRequests()
-                .antMatchers("/", "/register").permitAll()
-                .antMatchers("/login")
-                .anonymous()
+                .antMatchers("/", "/register", "/api/auth/**", "/api/login", "/login").permitAll() // Add your login endpoint here
                 .anyRequest()
                 .authenticated()
                 .and()
